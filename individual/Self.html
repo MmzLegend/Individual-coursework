@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Coursework</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/dist/boxicons.js' rel='stylesheet'>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<body>
+    <div id="open">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light shadow bg-light container-fluid">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-cart-plus"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" style="padding-left:35rem;">
+                            <h4 class="nav-link h5 text-black">Ismail Classroom</h4>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <a class="text-reset me-3" v-on:click="showCheckout">
+                        <i class="fas fa-cart-plus"></i>
+                        <span class="badge rounded-pill badge-notification bg-danger">{{cartItemCount}}</span>
+                    </a>
+
+                </div>
+            </div>
+        </nav>
+        <div class="container mt-5">
+            <div v-if="showProduct">
+                <div class="row pt-5">
+                    <h4></h4>
+                    <div class="col-lg-2">
+                        <div class="still">
+                            <div class="form-check">
+                                <input class="form-check-input" value="Ascending" type="radio" id="ascending"
+                                    v-model="lowHigh" />
+                                <label class="form-check-label" for="ascending">Ascending</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" value="Descending" type="radio" id="descending"
+                                    v-model="lowHigh" />
+                                <label class="form-check-label" for="descending">Descending</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <form class="form-a">
+                            <div class="row">
+                                <div class="col-md-8 mb-2">
+                                    <div class="form-group">
+                                        <input type="text" v-model="searchInput" placeholder="Search"
+                                         class="form-control p-2 ps-3 rounded-0 shadow-0 form-control-lg form-control-a">
+
+                                    </div>
+                                </div>
+                               
+
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <div class="form-group">
+                                    <select name="sortBy" v-model="sortBy"
+                                        class="form-control p-2 bg-white ps-3 form-select rounded-0 shadow-0 form-control-a form-control-lg">
+                                        <option>--Sort By--</option>
+                                        <option value="price">Price</option>
+                                        <option value="location">Location</option>
+                                        <option value="avalibility">Avalibility</option>
+                                        <option value="subject">Subject</option>
+                                    </select>
+                                </div>
+                            </div>
+                
+</body>
+
+</html>
